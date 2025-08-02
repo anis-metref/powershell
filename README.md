@@ -49,9 +49,9 @@ LaFiliale (racine)
 
 Chaque unité organisationnelle doit être créée uniquement si elle n’existe pas déjà dans Active Directory.
 
-Le fichier `OUCreation.csv` doit être adapté pour remplacer noms de domaine **esgi.local** par votre nom de domaine.
-
 ![nom-de-domain](./capture/1.PNG)
+
+Le fichier `OUCreation.csv` doit être adapté pour remplacer noms de domaine **esgi.local** par votre nom de domaine.
 
 ---
 
