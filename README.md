@@ -1,4 +1,4 @@
-# Projet d’intégration des utilisateurs de LaFiliale dans Active Directory via Powershell
+# Projet d’intégration des utilisateurs de LaFiliale dans active directory via powershell
 **Groupe SRC - Quantalis Innovations**
 
 ---
