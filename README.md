@@ -1,4 +1,4 @@
-# Projet d’intégration des utilisateurs de la filiale dans Active Directory  
+# Projet d’intégration des utilisateurs de LaFiliale dans Active Directory  
 **Groupe SRC - Quantalis Innovations**
 
 ---
@@ -73,6 +73,8 @@ Pour chaque utilisateur :
 
 Avant exécution, assurez-vous que les noms de domaine dans le fichier sont remplacés par **esgi.local** ou par votre nom de domain.
 
+![creation-OUn](./capture/2.PNG)
+
 ---
 
 ### Script 3 : Suppression ciblée d’utilisateurs
@@ -100,6 +102,8 @@ Ce script doit réaliser plusieurs tâches :
 3. Supprimer tous les utilisateurs dans l’OU `Usine`, notamment `mendes` et `Human`, puis supprimer cette unité organisationnelle.
 
 4. Effectuer les vérifications nécessaires pour confirmer la suppression et la désactivation correcte.
+
+![nom-de-domain](./capture/4.PNG)
 
 ---
 
