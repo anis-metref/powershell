@@ -73,7 +73,7 @@ Pour chaque utilisateur :
 - Assigner le mot de passe par défaut `Pa55W0rd` avec obligation de changement au prochain login.  
 - Ne créer un compte que si celui-ci n’existe pas déjà dans Active Directory.
 
-Avant exécution, assurez-vous que les noms de domaine dans le fichier sont remplacés par **esgi.local** ou par votre nom de domain.
+Avant exécution, assurez-vous que les noms de domaine dans le fichier sont remplacés par **esgi.local** ou par votre nom de domaine.
 
 ![creation-OUn](./capture/3.PNG)
 
