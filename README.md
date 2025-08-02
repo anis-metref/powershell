@@ -1,6 +1,3 @@
-Voici le README complet et clair structuré sous forme d’histoire, basé sur la société fictive **Quantalis Innovations** (groupe SRC) et son domaine Active Directory **esgi.local**, intégrant une filiale fictive nommée **laFiliale** :
-
-```markdown
 # Projet d’intégration des utilisateurs de la filiale dans Active Directory  
 **Groupe SRC - Quantalis Innovations**
 
@@ -123,11 +120,7 @@ Ce script doit réaliser plusieurs tâches :
 
 ## Conclusion
 
-Ces scripts automatisent l’intégration, la gestion et la sécurisation des comptes utilisateurs dans un contexte de fusion d’entreprise. Le processus garantit cohérence, efficacité et contrôles rigoureux pour la gestion des accès.
+Ces scripts automatisent l’intégration, la gestion et la sécurisation des comptes utilisateurs dans un contexte de fusion d’entreprise.
 
-Pour toute aide sur la création de scripts ou leur déploiement, un accompagnement est disponible.
-
-**Bon courage dans l’intégration des utilisateurs au sein du groupe SRC - Quantalis Innovations !**
 ```
 
-Si vous souhaitez une aide complémentaire pour créer les scripts PowerShell, n’hésitez pas à me le demander.
