@@ -25,7 +25,7 @@ Les Ressources Humaines ont fourni plusieurs fichiers CSV contenant :
 En s’appuyant sur le fichier `OUCreation.csv`, créer récursivement l’arborescence suivante représentant la filiale laFiliale :  
 
 ```
-Filiale (racine)
+LaFiliale (racine)
  ├─ Services
  │  ├─ Direction
  │  ├─ Ressources Humaines
@@ -49,7 +49,9 @@ Filiale (racine)
 
 Chaque unité organisationnelle doit être créée uniquement si elle n’existe pas déjà dans Active Directory.
 
-Le fichier `OUCreation.csv` doit être adapté pour remplacer les anciens noms de domaine par **esgi.local**.
+Le fichier `OUCreation.csv` doit être adapté pour remplacer noms de domaine **esgi.local** par votre nom de domaine.
+
+![Configuration wg-easy](./capture/1.png)
 
 ---
 
@@ -69,7 +71,7 @@ Pour chaque utilisateur :
 - Assigner le mot de passe par défaut `Pa55W0rd` avec obligation de changement au prochain login.  
 - Ne créer un compte que si celui-ci n’existe pas déjà dans Active Directory.
 
-Avant exécution, assurez-vous que les noms de domaine dans le fichier sont remplacés par **esgi.local**.
+Avant exécution, assurez-vous que les noms de domaine dans le fichier sont remplacés par **esgi.local** ou par votre nom de domain.
 
 ---
 
@@ -98,23 +100,6 @@ Ce script doit réaliser plusieurs tâches :
 3. Supprimer tous les utilisateurs dans l’OU `Usine`, notamment `mendes` et `Human`, puis supprimer cette unité organisationnelle.
 
 4. Effectuer les vérifications nécessaires pour confirmer la suppression et la désactivation correcte.
-
----
-
-## Livraison
-
-- Les scripts PowerShell seront fournis avec des commentaires détaillés expliquant chaque étape.  
-- Les fichiers seront nommés selon la convention : `__Script-N.txt` (N allant de 1 à 4).  
-- Le kit complet sera remis sous forme de PDF à envoyer à : [calvo_herve@yahoo.fr](mailto:calvo_herve@yahoo.fr).
-
----
-
-## Bonnes pratiques
-
-- Toujours effectuer une sauvegarde préalable de l’Active Directory avant tout déploiement massif.  
-- Tester les scripts dans un environnement sécurisé de pré-production avant de les appliquer en production.  
-- Adapter tous les fichiers CSV pour refléter le domaine **esgi.local**.  
-- Vérifier les droits nécessaires et la syntaxe des scripts PowerShell avant exécution.
 
 ---
 
