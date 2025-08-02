@@ -1,50 +1,50 @@
 Import-Module ActiveDirectory
 
-########################################33#### --- CrÈation de l'OU racine ---
+############################################ --- Scripte1: Cr√©ation de l'OU racine ---  #########################################
 $racinePath = "DC=esgi,DC=local"
 $laFiliale = "LaFiliale"
 
 if (-not (Get-ADOrganizationalUnit -Filter "Name -eq '$laFiliale'" -SearchBase $racinePath -ErrorAction SilentlyContinue)) {
     try {
         New-ADOrganizationalUnit -Name $laFiliale -Path $racinePath -ProtectedFromAccidentalDeletion $true
-        Write-Host "OU racine crÈÈe : $laFiliale"
+        Write-Host "OU racine cr√©√©e : $laFiliale"
     } catch {
-        Write-Host "Erreur lors de la crÈation de l'OU racine '$laFiliale' : $_"
+        Write-Host "Erreur lors de la cr√©ation de l'OU racine '$laFiliale' : $_"
     }
 } else {
-    Write-Host "OU racine dÈj‡ existante : $laFiliale"
+    Write-Host "OU racine d√©j√† existante : $laFiliale"
 }
 
-########################## --- CrÈation des OU et Sous-OU ---
+########################## --- Cr√©ation des OU et Sous-OU ---
 $csvpath = ".\OUCreation.csv"
 $ou = Import-Csv -Path $csvpath -Delimiter ";"
 
 foreach ($o in $ou) {
-    # CrÈation de l'OU principale
+    # Cr√©ation de l'OU principale
     try {
         if (-not (Get-ADOrganizationalUnit -Filter "Name -eq '$($o.name)'" -SearchBase $o.path -ErrorAction SilentlyContinue)) {
             New-ADOrganizationalUnit -Name $o.name -Path $o.path -ProtectedFromAccidentalDeletion $true
-            Write-Host "OU principale crÈÈe : $($o.name)"
+            Write-Host "OU principale cr√©√©e : $($o.name)"
         } else {
-            Write-Host "OU principale dÈj‡ existante : $($o.name)"
+            Write-Host "OU principale d√©j√† existante : $($o.name)"
         }
     } catch {
-        Write-Host "Erreur lors de la crÈation de l'OU principale '$($o.name)' : $_"
+        Write-Host "Erreur lors de la cr√©ation de l'OU principale '$($o.name)' : $_"
     }
 
-    # CrÈation des sous-OU
+    # Cr√©ation des sous-OU
     $sou = $o.namesubOU -split ":"
 
     foreach ($s in $sou) {
         try {
             if (-not (Get-ADOrganizationalUnit -Filter "Name -eq '$s'" -SearchBase $o.PathsubOU -ErrorAction SilentlyContinue)) {
                 New-ADOrganizationalUnit -Name $s -Path $o.PathsubOU -ProtectedFromAccidentalDeletion $true
-                Write-Host "Sous-OU crÈÈe : $s"
+                Write-Host "Sous-OU cr√©√©e : $s"
             } else {
-                Write-Host "Sous-OU dÈj‡ existante : $s"
+                Write-Host "Sous-OU d√©j√† existante : $s"
             }
         } catch {
-            Write-Host "Erreur lors de la crÈation de la sous-OU '$s' dans '$($o.PathsubOU)' : $_"
+            Write-Host "Erreur lors de la cr√©ation de la sous-OU '$s' dans '$($o.PathsubOU)' : $_"
         }
     }
 }
@@ -52,7 +52,7 @@ foreach ($o in $ou) {
 
 Import-Module ActiveDirectory
 
-################################################################### --- CrÈation des utilisateurs ---
+##################################################### --- Script 2 : Cr√©ation des utilisateurs --- #####################################################
 $usersPath = ".\UsersLaFiliale.csv"
 $users = Import-Csv -Path $usersPath -Delimiter ";"
 
@@ -69,9 +69,9 @@ foreach ($user in $users) {
                    -Enabled $true `
                    -ErrorAction Stop
 
-        Write-Host "Utilisateur crÈÈ : $($user.firstname) $($user.lastname)"
+        Write-Host "Utilisateur cr√©√© : $($user.firstname) $($user.lastname)"
     } catch {
-        Write-Host "Erreur lors de la crÈation de l'utilisateur '$($user.firstname) $($user.lastname)' : $_"
+        Write-Host "Erreur lors de la cr√©ation de l'utilisateur '$($user.firstname) $($user.lastname)' : $_"
     }
 }
 
@@ -80,11 +80,11 @@ foreach ($user in $users) {
 
 Import-Module ActiveDirectory
 
-################################################ --- Suppression des utilisateurs
+################################################ --- Script 3 : Suppression des utilisateurs #######################################
 
 $usersPath = ".\usersToSupress.csv"
 
-# Importation des donnÈes du CSV
+# Importation des donn√©es du CSV
 $usersToDelete = Import-Csv -Path $usersPath -Delimiter ";"
 
 # Traitement de chaque ligne
@@ -98,7 +98,7 @@ foreach ($entry in $usersToDelete) {
         try {
             $users = Get-ADUser -Filter "Name -like '*$nom*'" -SearchBase $ou
             if ($users.Count -eq 0) {
-                Write-Host "Aucun utilisateur trouvÈ avec le nom '$nom' dans '$ou'"
+                Write-Host "Aucun utilisateur trouv√© avec le nom '$nom' dans '$ou'"
             } else {
                 foreach ($user in $users) {
                     Write-Host "Suppression de : $($user.SamAccountName) ($($user.DistinguishedName))"
@@ -109,11 +109,11 @@ foreach ($entry in $usersToDelete) {
             Write-Host "Erreur lors de la recherche dans l'OU : $ou"
         }
     } else {
-        Write-Host "Utilisateur '$nom' marquÈ comme ‡ conserver (aSupprimer=N)"
+        Write-Host "Utilisateur '$nom' marqu√© comme √† conserver (aSupprimer=N)"
     }
 }
 
-################################################ --- DÈsactivation des utilisateurs dans certaines OUs
+################################################ --- Scripte 4 : D√©sactivation des utilisateurs dans certaines OUs ############################################
 
 $ouDisableCsvPath = ".\OUdisable.csv"
 $ouListDisable = Import-Csv -Path $ouDisableCsvPath
@@ -124,19 +124,19 @@ foreach ($entry in $ouListDisable) {
         $users = Get-ADUser -Filter * -SearchBase $ou
         foreach ($user in $users) {
             Disable-ADAccount -Identity $user.SamAccountName
-            Write-Host "Utilisateur dÈsactivÈ : $($user.SamAccountName)"
+            Write-Host "Utilisateur d√©sactiv√© : $($user.SamAccountName)"
         }
     } catch {
-        Write-Host "Erreur lors de la dÈsactivation dans l'OU : $ou"
+        Write-Host "Erreur lors de la d√©sactivation dans l'OU : $ou"
     }
 }
 
-################################################ --- VÈrification de suppression
+################################################ --- V√©rification de suppression
 
 $utilisateurs = @(
-    @{Nom="paris"; OU="OU=DÈveloppement,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local"},
+    @{Nom="paris"; OU="OU=D√©veloppement,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local"},
     @{Nom="shiny"; OU="OU=Direction,OU=Services,OU=LaFiliale,DC=esgi,DC=local"},
-    @{Nom="sad";   OU="OU=ComptabilitÈ,OU=Services,OU=LaFiliale,DC=esgi,DC=local"}
+    @{Nom="sad";   OU="OU=Comptabilit√©,OU=Services,OU=LaFiliale,DC=esgi,DC=local"}
 )
 
 foreach ($utilisateur in $utilisateurs) {
@@ -147,27 +147,28 @@ foreach ($utilisateur in $utilisateurs) {
         $user = Get-ADUser -Filter "Name -like '*$nom*'" -SearchBase $ou -Properties Enabled
         if ($user) {
             if ($user.Enabled -eq $true) {
-                Write-Host "Utilisateur activÈ : $($user.Name) dans l'OU $ou"
+                Write-Host "Utilisateur activ√© : $($user.Name) dans l'OU $ou"
             } else {
-                Write-Host "Utilisateur D…SACTIV… : $($user.Name) dans l'OU $ou"
+                Write-Host "Utilisateur D√âSACTIV√â : $($user.Name) dans l'OU $ou"
             }
         } else {
-            Write-Host "Aucun utilisateur avec le nom '$nom' trouvÈ dans l'OU $ou"
+            Write-Host "Aucun utilisateur avec le nom '$nom' trouv√© dans l'OU $ou"
         }
     } catch {
-        Write-Host "Erreur lors de la vÈrification dans l'OU : $ou"
+        Write-Host "Erreur lors de la v√©rification dans l'OU : $ou"
     }
 }
 
-################################################ --- DÈsactivation des utilisateurs dans l'Usine
+################################################ --- D√©sactivation des utilisateurs dans l'Usine
 
 $ouUsine = "OU=Usine,OU=Production,OU=LaFiliale,DC=esgi,DC=local"
 try {
     $usersUsine = Get-ADUser -Filter * -SearchBase $ouUsine
     foreach ($user in $usersUsine) {
         Disable-ADAccount -Identity $user.SamAccountName
-        Write-Host "Utilisateur dÈsactivÈ : $($user.SamAccountName)"
+        Write-Host "Utilisateur d√©sactiv√© : $($user.SamAccountName)"
     }
 } catch {
-    Write-Host "Erreur lors de la dÈsactivation dans l'OU Usine : $ouUsine"
+    Write-Host "Erreur lors de la d√©sactivation dans l'OU Usine : $ouUsine"
 }
+
