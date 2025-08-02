@@ -1,0 +1,6 @@
+﻿nom;localisation;aSupprimer
+Rexroth;OU=Production,OU=LaFiliale,DC=esgi,DC=local;O
+Blake;OU=Consulting,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;O
+Furious;OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;N
+cole;OU=Développement,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local;O
+Hunter;OU=Méthodes,OU=Production,OU=LaFiliale,DC=esgi,DC=local;N

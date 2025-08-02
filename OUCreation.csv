@@ -1,0 +1,5 @@
+﻿name;path;namesubOU;PathsubOU
+"Services";"OU=LaFiliale,DC=esgi,DC=local";"Direction:Ressources Humaines:Comptabilité:Paye:Informatique";"OU=Services,OU=LaFiliale,DC=esgi,DC=local"
+"Production";"OU=LaFiliale,DC=esgi,DC=local";"Usine:Logistique:Méthodes:Support";"OU=Production,OU=LaFiliale,DC=esgi,DC=local"
+"Recherche";"OU=LaFiliale,DC=esgi,DC=local";"Prospective:Développement:Assurance Qualité";"OU=Recherche,OU=LaFiliale,DC=esgi,DC=local"
+"Ventes";"OU=LaFiliale,DC=esgi,DC=local";"Commercial:Avant-Vente:Consulting";"OU=Ventes,OU=LaFiliale,DC=esgi,DC=local"

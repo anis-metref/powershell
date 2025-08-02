@@ -1,0 +1,25 @@
+﻿lastname;firstname;phone;pathuser;function
+busin;alexandre;601020288;OU=Logistique,OU=Production,OU=LaFiliale,DC=esgi,DC=local;101
+dordet;cassandra;601020289;OU=Méthodes,OU=Production,OU=LaFiliale,DC=esgi,DC=local;102
+laveuve;pierre;601020290;OU=Support,OU=Production,OU=LaFiliale,DC=esgi,DC=local;103
+mendes;hugo;601020291;OU=Usine,OU=Production,OU=LaFiliale,DC=esgi,DC=local;104
+velaris;Rhysand;601020292;OU=Avant-Vente,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;105
+Archeron;Feyre;601020293;OU=Commercial,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;106
+Gilles;Aurélien;601020294;OU=Consulting,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;107
+cole;Knight;601020296;OU=Développement,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local;109
+Spencer;Baron;601020297;OU=Direction,OU=Services,OU=LaFiliale,DC=esgi,DC=local;110
+Followhill;Jamie;601020299;OU=Comptabilité,OU=Services,OU=LaFiliale,DC=esgi,DC=local;112
+LeBLanc;Emilia;601020302;OU=Ressources Humaines,OU=Services,OU=LaFiliale,DC=esgi,DC=local;115
+Furious;Roman;601020304;OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;220
+Rexroth;Edie;601020306;OU=Production,OU=LaFiliale,DC=esgi,DC=local;240
+Hunter;Azriel;601020308;OU=Méthodes,OU=Production,OU=LaFiliale,DC=esgi,DC=local;2
+Witch;Morrigan;601020309;OU=Support,OU=Production,OU=LaFiliale,DC=esgi,DC=local;3
+Human;Nesta;601020310;OU=Usine,OU=Production,OU=LaFiliale,DC=esgi,DC=local;4
+heart;Ridge;601020312;OU=Commercial,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;6
+Blake;Sydney;601020313;OU=Consulting,OU=Ventes,OU=LaFiliale,DC=esgi,DC=local;7
+orphan;Teagan;601020314;OU=Assurance Qualité,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local;83
+paris;Elena;601020315;OU=Développement,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local;82
+shiny;Landon;601020316;OU=Direction,OU=Services,OU=LaFiliale,DC=esgi,DC=local;10
+anderson;Shay;601020317;OU=Prospective,OU=Recherche,OU=LaFiliale,DC=esgi,DC=local;11
+sad;Grayson;601020318;OU=Comptabilité,OU=Services,OU=LaFiliale,DC=esgi,DC=local;12
+coincidences;Ally;601020321;OU=Ressources Humaines,OU=Services,OU=LaFiliale,DC=esgi,DC=local;15
