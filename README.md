@@ -51,7 +51,7 @@ Chaque unité organisationnelle doit être créée uniquement si elle n’existe
 
 Le fichier `OUCreation.csv` doit être adapté pour remplacer noms de domaine **esgi.local** par votre nom de domaine.
 
-![Configuration wg-easy](./capture/1.png)
+![nom-de-domain](./capture/1.PNG)
 
 ---
 
