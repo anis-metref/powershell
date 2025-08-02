@@ -15,7 +15,7 @@ if (-not (Get-ADOrganizationalUnit -Filter "Name -eq '$laFiliale'" -SearchBase $
     Write-Host "OU racine déjà existante : $laFiliale"
 }
 
-########################## --- Création des OU et Sous-OU ---
+########################## --- Création des OU et Sous-OU --- ##########################
 $csvpath = ".\OUCreation.csv"
 $ou = Import-Csv -Path $csvpath -Delimiter ";"
 
@@ -171,4 +171,5 @@ try {
 } catch {
     Write-Host "Erreur lors de la désactivation dans l'OU Usine : $ouUsine"
 }
+
 
